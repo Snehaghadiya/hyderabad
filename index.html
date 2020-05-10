@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title>SNEHA WEBSITE</title>
+
+
+    <link rel="stylesheet" type="text/css" href="css/graph.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	
+<script type="text/javascript">
+
+ google.charts.load('current', {'packages':['corechart', 'line']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('date', 'Date');
+      data.addColumn('number','Predictive');
+
+      data.addRows([
+        [new Date(2020, 5,11), 1189],
+        [new Date(2020, 5,12), 1198],
+        [new Date(2020, 5,13), 1203],
+        [new Date(2020, 5,14), 1216],
+        [new Date(2020, 5,15), 1223],
+        [new Date(2020, 5,16), 1234],
+        [new Date(2020, 5,17), 1242],
+        [new Date(2020, 5,18),  1248],
+        [new Date(2020, 5,19),  1251],
+        [new Date(2020, 5,20),  1262],
+	[new Date(2020, 5,21),  1270],
+	[new Date(2020, 5,22),  1279],
+	[new Date(2020,5,23),  1287],
+	[new Date(2020,5,24),  1301],
+	[new Date(2020,5,25),  1325],
+	[new Date(2020,5,26),  1338],
+	[new Date(2020,5,27), 1351],
+	[new Date(2020,5,28), 1371],
+	[new Date(2020,5,29), 1392],
+	[new Date(2020,5,30), 1405],
+	[new Date(2020,5,31), 1423],
+        
+      ]);
+
+      var linearOptions = {
+        title: 'infectious people predicted by gleamviz till 31st May for telangana',
+        legend: 'none',
+        width: 550,
+        height: 300,
+        hAxis: {
+          title: 'Date'
+        },
+        vAxis: {
+          title: 'infectious count',
+          ticks: [0, 200, 400, 600, 800,1000,1200,1400]
+        }
+      };
+
+      var logOptions = {
+        title: 'World Population Since 1400 A.D. in Log Scale',
+        legend: 'none',
+        width: 450,
+        height: 500,
+         hAxis: {
+          title: 'Date'
+        },
+        vAxis: {
+          title: 'Population (millions)',
+          scaleType: 'log',
+          ticks: [0, 1000, 2000, 4000, 6000]
+        }
+      };
+
+      var linearChart = new google.visualization.LineChart(document.getElementById('linear_div'));
+       linearChart.draw(data, linearOptions);
+
+      var logChart = new google.visualization.LineChart(document.getElementById('log_div'));
+      logChart.draw(data, logOptions);
+    }
+
+    
+   
+ </script>
+</head>   
+<style>	
+body {
+  background-image: url('download.jpeg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  background-size: cover;
+}
+</style> 
+	
+   <body>
+	
+   
+   <div id="linear_div" style="margin-left:390px; margin-top: 140px; width: 150px; height: 400px"></div>
+	
+
+  </body>
+</html>
+
+
